@@ -1,0 +1,6 @@
+Metric,Cross Validation,Test
+Accuracy,0.802,0.801
+Precision,0.6524,0.6442
+Recall,0.5465,0.5615
+F1-Score,0.5946,0.6
+ROC-AUC,0.8455,0.835
