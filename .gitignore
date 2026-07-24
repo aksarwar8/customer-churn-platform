@@ -20,9 +20,8 @@ env/
 # Windows
 Thumbs.db
 
-# Models
-*.pkl
-*.joblib
-
+.git/
+.gitignore
+.pytest_cache/
 # Logs
 *.log

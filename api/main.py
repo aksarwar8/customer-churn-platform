@@ -3,6 +3,7 @@ from api.schemas import CustomerData,PredictionResponse
 from api.predictor import predict_customer
 from api.exceptions import global_exception_handler
 from config.settings import API_VERSION
+from src.validation import validate_customer
 
 from config.settings import APP_NAME, API_VERSION
 
@@ -40,14 +41,10 @@ def model_info():
     }
 
 
-@app.post(
-    "/predict",
-    response_model=PredictionResponse
-)
+@app.post("/predict", response_model=PredictionResponse)
 def predict(customer: CustomerData):
-    """
-    Predict customer churn.
-    """
+
+    validate_customer(customer)
 
     result = predict_customer(customer.model_dump())
 
